@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+  todo-nodejs-service:
+    image: todo-nodejs-service
+    ports:
+      - "8080:8080"
+    env_file:
+      - todo-nodejs-service.env
+    container_name: todo-nodejs-service
