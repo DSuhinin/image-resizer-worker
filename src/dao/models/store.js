@@ -7,8 +7,8 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false,
       },
       thumb: {
-          type: Sequelize.STRING,
-          allowNull: true,
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       size: {
         type: Sequelize.STRING,

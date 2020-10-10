@@ -1,9 +1,12 @@
 version: '3.2'
 services:
-  todo-nodejs-service:
-    image: todo-nodejs-service
-    ports:
-      - "8080:8080"
+  image-resizer-worker:
+    image: image-resizer-worker
     env_file:
-      - todo-nodejs-service.env
-    container_name: todo-nodejs-service
+      - image-resizer-worker.env
+    container_name: image-resizer-worker
+    networks:
+      - image-resizer-network
+
+networks:
+  image-resizer-network:
