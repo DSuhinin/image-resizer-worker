@@ -14,9 +14,9 @@ SERVICE=image-resizer-worker
 # General variables
 #
 # Path to Docker file.
-PATH_DOCKER_FILE=$(realpath ./build/Dockerfile)
+PATH_DOCKER_FILE=$(realpath ./docker/Dockerfile)
 # Path to docker-compose file
-PATH_DOCKER_COMPOSE_FILE=$(realpath ./build/docker-compose.yml)
+PATH_DOCKER_COMPOSE_FILE=$(realpath ./docker/docker-compose.yml)
 # Docker compose starting options.
 DOCKER_COMPOSE_OPTIONS= -f $(PATH_DOCKER_COMPOSE_FILE)
 

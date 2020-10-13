@@ -2,7 +2,10 @@ const debug = require("debug")("worker:events:delete");
 const StoreModel = require("../../../dao/models").StoreModel;
 const AWS = require("aws-sdk");
 
-const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
+const s3 = new AWS.S3({
+    endpoint: process.env.NODE_ENV !== 'production' ? process.env.AWS_S3_ENDPOINT : undefined,
+    apiVersion: "2006-03-01"
+});
 
 const handler = (data) => {
   StoreModel.findByPk(data.id, { paranoid: false })

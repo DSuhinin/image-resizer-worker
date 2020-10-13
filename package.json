@@ -13,6 +13,7 @@
   "dependencies": {
     "amqplib": "^0.6.0",
     "aws-sdk": "^2.770.0",
+    "chai": "^4.2.0",
     "debug": "^4.2.0",
     "mysql2": "^2.2.5",
     "resizer-stream": "^1.0.1",

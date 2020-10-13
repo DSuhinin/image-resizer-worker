@@ -4,7 +4,11 @@ const StoreModel = require("./../../../dao/models").StoreModel;
 const AWS = require("aws-sdk");
 const sharp = require("sharp");
 
-const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
+const s3 = new AWS.S3({
+    endpoint: process.env.NODE_ENV !== 'production' ? process.env.AWS_S3_ENDPOINT : undefined,
+    apiVersion: "2006-03-01",
+    s3ForcePathStyle: process.env.NODE_ENV !== 'production'
+});
 
 const STATUS_PROCESSING = 2;
 const STATUS_READY = 3;
